@@ -44,7 +44,7 @@ public class TaskController {
     return ResponseEntity.ok(task);
   }
 
-  @GetMapping("/changeStatus")
+  @PutMapping("/changeStatus")
   public ResponseEntity<Task> updateTask(@RequestParam Long id, @RequestBody Task Taskdetails)
   {
     Task task = taskRepository.findById(id).orElseThrow(()-> new ResourceNotFoundException("Task not found :"+id));
